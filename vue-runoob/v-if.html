@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-if</title>
+</head>
+<body>
+    <script src="../node_modules/vue/dist/vue.js"></script>
+
+    <div class="app">
+        <div v-if="hide">
+            3>5
+        </div>
+        <div v-else-if="3==5">
+            3=5
+        </div>
+        <div v-else>
+            3<5
+        </div>
+
+        <template v-if="seen">
+            you will seen me
+        </template>
+    </div>
+    <script>
+        new Vue({
+            el:".app",
+            data:{
+                hide:3>5,
+                seen:true
+            }
+        });
+    </script>
+</body>
+</html>

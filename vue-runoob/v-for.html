@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-for</title>
+</head>
+<body>
+<script src="../node_modules/vue/dist/vue.js"></script>
+
+<div class="app">
+   <!-- 遍历数组-->
+    <ul>
+        <li v-for="student in students">
+            The student name is :{{student.name}}<br>
+            The student age is :{{student.age}}
+        </li>
+    </ul>
+
+    <!--遍历对象-->
+    <ol>
+        <li v-for="(value,key,index) in orange">
+            value:{{value}}
+            key:{{key}}
+            index:{{index}}<br>
+        </li>
+    </ol>
+
+    <!--遍历整数-->
+    <ul>
+        <li v-for="n in 10">
+            {{n}}
+        </li>
+    </ul>
+</div>
+<script>
+    new Vue({
+        el: ".app",
+        data: {
+            students:
+                [
+                    {
+                        name: "ouyangfeng",
+                        age: 18
+                    },
+                    {
+                        name: "sixi",
+                        age: 20
+                    }
+
+                ],
+            orange:{
+                color:'yellow',
+                weight:180
+            }
+
+        }
+
+    });
+</script>
+</body>
+</html>
