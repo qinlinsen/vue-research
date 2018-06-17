@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-bind</title>
+</head>
+<body>
+    <script src="../node_modules/vue/dist/vue.js"></script>
+
+    <div id="app">
+        <!--注意baidu这个单词不要 忘记写在<a>与</a>之间了-->
+        <a :href="url">baidu</a>
+        <!--说明test带不带括号无所谓-->
+        <button v-on:click="test">test</button>
+        <button @click="test()">test without </button>
+        {{message | capti()}}
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                url: 'http://www.baidu.com',
+                message:'xixieweewe'
+            },
+            methods:{
+                test(){
+                    alert("click me !");
+                }
+            },
+            filters:{
+                capti(str){
+                    return str.toUpperCase();
+                }
+            }
+        })
+    </script>
+</body>
+</html>

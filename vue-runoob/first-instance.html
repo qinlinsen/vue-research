@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>first instance</title>
+</head>
+<body>
+    <script src="../node_modules/vue/dist/vue.js"></script>
+
+    <div id="app">
+        <p>{{message}}</p>
+        <p>{{name}}</p>
+        <h1>{{test()}}</h1>
+        <h2>{{renmin()}}</h2>
+        <h3>{{tianxia()}}</h3>
+        <div v-html="html"></div>
+    </div>
+    <script>
+        new Vue({
+            el:"#app",
+            data:{
+                message:"Hello vue.js",
+                name:"ouyangfeng",
+                html:"<h1>html</h1>"
+            },
+            methods:{
+                test(){
+                    return `I am chinese`;
+                },
+                renmin(){
+                    return `renmin`;
+                },
+                tianxia:function () {
+                    return `天
+                         下`;
+                }
+            }
+        });
+    </script>
+</body>
+</html>
